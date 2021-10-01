@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Brayan Monserrah</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" href="/images/portfolio.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/index.html" class="logo">Bem-vindo(a)</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="/index.html">Portfólio</a></li>
+							<li><a href="/generic.html">Sobre mim</a></li>
+							<!--<li><a href="/elements.html">Contato</a></li>-->
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/brayan-bento/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/brayannmb" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.instagram.com/brayannmb/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="https://brayan-monserrah.medium.com/" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Maio 21, 2021</span>
+									<h1>Panorama da COVID-19<br/>
+									</h1>
+									<p>Análise dos dados do Coronavírus no Brasil e no mundo.</p>
+								</header>
+                                <div class="image main"><img src="/images/post03/banner.jpeg" alt="" /></div><br/>
+                                <p>Infelizmente o pesadelo foi realizado. Aconteceu o que estava previsto há muito tempo, foi "sonhado" que tudo isso iria de fato acontecer, o empregado, a dona de casa, o bandido e o policial não sairiam de suas casas. Parecia até um combinado, todas as pessoas deste planeta resolveriam ficar em casa.<br/>
+                                No dia 11 de março de 2020, foi decretada pela Organização Mundial da Saúde algo que muitos temiam, o pior grau de contágio de uma doença, uma pandemia. Nesta data, a terra realmente parou.<br/>
+                                O homem se viu diante de um inimigo imbatível. Um vilão invisível que atacava silenciosamente e atingia cada vez mais pessoas.<br/>
+                                Para quem não conhece, os trechos do primeiro parágrafo foram retirados da música "O dia em que a terra parou" de Raul Seixas.<br/>
+                                Disclaimer: Este projeto foi realizado para fins educacionais. Portanto, não deve ser usado para outra finalidade.<br/>
+                                Este projeto foi realizado com base nos dados até o dia 14/05/2021.</p>
+                                <h3>O Problema</h3>
+                                <p>Creio que todos nós estamos cansados de saber o problema que esta doença nos trouxe. O mundo inteiro se reinventou, cada um de nós mudamos algo em nossa rotina, seja o uso de uma mascará até mesmo a mudança de profissão. Alguns dos principais prejuízos causados:</p>
+                                <ul>
+                                    <li>Milhões de mortes;</li>
+                                    <li>Desemprego;</li>
+                                    <li>Fechamento de milhares de empresas;</li>
+                                    <li>Isolamento social;</li>
+                                    <li>Superlotação nos hospitais.</li>
+                                </ul>
+                                <p>Com certeza, existem outros probelmas relacionados a pandemia, mas busquei trazer os principais.</p>
+                                <h3>Obtenção dos Dados</h3>
+                                <p>Os dados foram obtidos a partir de um iniciação da Global Change Data Lab, em disponibilizar informações diariamente atualizadas sobre a Covid-19 ao redor do mundo. Uma organização sem fundos lucrativos do Reino Unido, focada no avanço da educação mundial.</p>
+                                <h3>Dicionário de Variáveis:</h3>
+                                <ul>
+                                    <li>continent: continente</li>
+                                    <li>location: localização</li>
+                                    <li>date: data da observação</li>
+                                    <li>total_cases: total de casos</li>
+                                    <li>new_cases: novos casos</li>
+                                    <li>total_deaths: total de mortes</li>
+                                    <li>new_deaths: novas mortes</li>
+                                    <li>new_tests: novos testes</li>
+                                    <li>total_tests: total de testes</li>
+                                    <li>total_units: total de unidades</li>
+                                    <li>total_vaccinations: unidades usadas pelo local para relatar seus dados de teste</li>
+                                    <li>people_vaccinated: pessoas vacinadas</li>
+                                    <li>gdp_per_capita: produto interno bruto</li>
+                                    <li>extreme_poverty: parcela de pessoas que vivem em extrema pobreza</li>
+                                    <li>life_expectancy: expectativa de vida</li>
+                                </ul>
+                                <h3>Limpeza de Dados</h3>
+                                <p>De início, quando visualizei as primeiras e últimas linhas deste conjunto de dados foi possível identificar muitas variáveis com seus valores ausentes. Estes valores, nos trazem problemas na hora da análise, então se fez necessária uma investigação. Pensando nisso, parti para investigação deste valores inválidos.</p>
+                                <h3>Contexto</h3>
+                                <p>Quando nos deparamos com valores inválidos, precisamos entender o motivo de estarem ausentes. Busquei analisar, estas são algumas informações que pude extrair:</p>
+                                <ul>
+                                    <li>Variáveis relacionadas a vacinação no começo do conjunto de dados estão ausentes. O que realmente faz sentido, pois, no começo de 2020 a vacina ainda não existia.</li>
+                                    <li>Das 17 variáveis que estão com 80% dos valores inválidos, 9 estão diretamente ligadas a vacina.</li>
+                                </ul>
+                                <p>Além de valores ausentes, foi verificado que também existiam outliers presentes neste conjunto de dados. Fiz uma separação e um tratamento entre variáveis gerais, continentes e alguns países que por si próprio já podiam ser classificados como outliers, pelo fato dos grandes números registrados, como: Estados Unidos e Brasil.</p>
+                                <h3>Análise Descritiva</h3>
+                                <p>Esta análise é referente ao início do Coronavírus ao redor do mundo ao dia 14 de maio de 2021.<br/>
+                                Este dataset contém uma entrada geral chamada de world, que possui valores de todos os países. Utilizei esta variável para analisar a progressão do vírus desde o seu início.</p>
+                                <div><img src="/images/post03/progressao_covid.png" alt="" /></div><br/>
+                                <p>Informações extraídas do gráfico acima:</p>
+                                <ul>
+                                    <li>Nos primeiros 6 meses da doença em 2020, o total de mortes já chegava a 500 mil mortes.</li>
+                                    <li>Em outubro de 2020, 10 meses após o início da doença o total de mortes já passava de 1 milhão de óbitos.</li>
+                                    <li>Em 1 ano da Covid-19 o mundo bateu taxa de quase 2 milhões de mortes.</li>
+                                    <li>Abril de 2021, a Covid-19 já fez mais de 3 milhões de vítimas em todo o mundo.</li>
+                                </ul>
+                                <h3>Quais são os países com maiores números de mortes?
+                                </h3>
+                                <div><img src="/images/post03/mortes_mundo.png" alt="" /></div><br/>
+                                <p>Normalmente pensaríamos que os países com mais mortes, são aqueles em que existem os maiores números de casos. De fato isso acontece, Brasil, USA e Índia são exemplos disso, mas o 4º país com o maior número de mortes foge desta ideia.</p>
+                                <ul>
+                                    <li>No último mês (abril), o México ficou posicionado na 15ª colocação dos países com os maiores números de novos casos. Relativamente, um número baixo, em contrapartida, o país ficou na 4ª colocação entre os países com mais mortes. Assim, contrariando a ideia que onde tem menos casos tem menos mortes.</li>
+                                </ul>
+                                <p>Em contrapartida, existem países que contrariam novamente nossa ideia principal. Mas desta vez, positivamente.</p>
+                                <ul>
+                                    <li>A Turquia, posicionada na 5ª posição dos países com os maiores números de novos casos, entretanto, ficou na 19ª posição dos países com mais mortes. Obtendo um resultado “bom” em relação novos casos versus óbitos.</li>
+                                </ul>
+                                <h3>Quais são os continentes com os maiores números de mortes?</h3>
+                                <div><img src="/images/post03/mortes_mundo1.png" alt="" /></div><br/>
+                                <p>Neste gráfico não foi incluído a Oceania, pois, em comparação aos demais continentes, o seu número é muito baixo e não apareceria no gráfico. <br/>
+                                O continente Europeu tem o maior registro de mortes pela Covid-19. Países com mais óbitos:</p>
+                                <ul>
+                                    <li>Reino Unido: 127.930 mortes;</li>
+                                    <li>Itália: 123.927 mortes;</li>
+                                    <li>Rússia: 113.182 mortes;</li>
+                                    <li>França: 107.584 mortes;</li>
+                                    <li>Alemanha: 86.030 mortes;</li>
+                                    <li>Espanha: 79.339 mortes;</li>
+                                </ul>
+                                <h3>Comparação Mundo X USA</h3>
+                                <p>Como foi visto, os Estados Unidos é o país com maior número de óbitos. Pensando nisso, neste tópico irei abordar a comparação entre os casos registrados ao redor do mundo e o país norte-americano.</p>
+                                <h3>Progressão de novos casos</h3>
+                                <div><img src="/images/post03/progressao_covid1.png" alt="" /></div><br/>
+                                <p>A curva de novos casos no país norte-americano é de fato muito parecida com o que ocorreu ao redor do mundo. Embora tenham similaridades, no final do gráfico é possível enxergar uma diminuição no número de novos casos nos Estados Unidos, enquanto os números ao redor do mundo voltam a crescer.</p>
+                                <p>Dez dias após o maior número de novos casos registrados nos Estados Unidos, com cerca de 300 mil novos casos, o país registra o maior número de mortes, 4476 novas mortes em apenas um dia. O fato das mortes ocorrerem 10 dias após o maior número de casos não implica causalidade, mas a relação entre ambas variáveis é alta.</p>
+                                <h3>Panorama dos USA nos últimos 6 meses?</h3>
+                                <p>Aqui poderemos endender o que ocorreu no país norte-americano no último semestre e se o número de mortes teve um crescimento ou uma diminuição.</p>
+                                <div><img src="/images/post03/mortes_usa.png" alt="" /></div><br/>
+                                <p>As condições no país tem demostrado melhorias desde o início de 2021, com uma queda de -75% no número de mortes.</p>
+                                <h3>Brasil</h3>
+                                <p>Neste tópico, irei falar da situação de casos e mortes pela Covid no Brasil. A imagem a seguir mostra um comparativo do mês de abril, sobre os 3 países com os maiores números de óbitos.</p>
+                                <div><img src="/images/post03/infografico.png" alt="" /></div><br/>
+                                <ul>
+                                    <li>Embora o país indiano ter sido mais contaminado neste mês, ele obteve um número de mortes muito inferior ao Brasil, que registrou 30 mil mortes a mais do que a Índia.</li>
+                                    <li>Abril de 2021 foi o mês em que o Brasil o maior número de óbitos desde o início da pandemia.</li>
+                                </ul>
+                                <h3>Declínio no Número de Mortes em Maio</h3>
+                                <div><img src="/images/post03/media_movel.png" alt="" /></div><br/>
+                                <p>Analisando o gráfico, claramente podemos ver a desaceleração no número de mortes no final do gráfico. <br/>
+                                Por conta do período de incubação do novo Coronavírus, especialistas recomendam que seja comparada a média móvel em um período de 14 dias. Caso o valor percentual desta comparação seja igual a 15%, isso nos diz que a situação ainda está instável, acima de 15% está em crescimento e se for mais de 15% negativos está em queda. Pensando nisso, analisei as médias no mês de maio de 2021.</p>
+                                <ul>
+                                    <li>Média móvel no dia 1 de maio: 2420 mortes;</li>
+                                    <li>Média móvel no dia 14 de maio: 1930 mortes;</li>
+                                </ul>
+                                <p>Efetuando o cálculo, o resultado é de -20% , sendo assim, a comparação entre estes dois dias apresenta queda no número mortes.</p>
+                                <h3>Panorama do Brasil nos últimos 6 meses?</h3>
+                                <p>Como sabemos o cenário atual no Brasil não é dos melhores, podemos até dizer que é um dos piores.</p>
+                                <div><img src="/images/post03/mortes_brasil.png" alt="" /></div><br/>
+                                <p>Através deste gráfico podemos enxergar a situação que esteve o Brasil no último semestre. Quando mencionei que o país brasileiro teve um dos piores cenários foi pensado no aumento de mais de 175% no número de mortes desde o início de 2021.</p>
+                                <h3>Vacinação</h3>
+                                <p>Infelizmente, o progresso da vacinação no Brasil tem andado a passos largos. Constantemente falta insumos para a produção de vacinas, estoques de vacinas importadas com pouquíssimas doses. Pensando nisso, o gráfico a seguir mostra a proporção dos imunizados e não imunizados até 14 de maio de 2021.</p>
+                                <div><img src="/images/post03/vacinados.png" alt="" /></div><br/>
+                                <ul>
+                                    <li>Apenas 8% da população brasileira tomou as duas doses da vacina.</li>
+                                </ul>
+                                <h3>Considerações Finais</h3>
+                                <p>Através das informações extraidas neste projeto foi possível entender melhor a situação de diversos países em meio o caos de uma pandemia. Esta análise exploratória mostrou que nem sempre os países onde tem os maiores números de mortes, é de fato o país onde tem o maior número de casos, como por exemplo o México.<br/>
+                                Analisando os dados sobre o mês de Abril, foi visto que o Brasil teve a pior situação entre os 3 países com mais mortes ao redor do mundo. O país brasileiro teve um número de casos 3x menor do que a Índia, mas obteve 30 mil mortes a mais que o país indiano.<br/>
+                                Foi possível enxergar a regressão do Brasil em relação aos Estados Unidos desde o início de 2021, onde no país sul-americano teve um aumento de 178% no número de mortes e no país norte-americano teve uma diminuição em -78% no número de mortes.</p>
+                                <h3>Thank you!</h3>
+                                <p>Espero que tenha gostado deste projeto. Para mais informações sobre os códigos em Python, visualizações e análises, me contate no meu Linkedin. Aqui está o meu GitHub onde contém este projeto e outros projetos. Estou aberto para sugestões de melhorias e dúvidas. Muito obrigado!</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<!--<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section> -->
+						<section class="split contact">
+							<section class="alt">
+								<h3>Endereço</h3>
+								<p>São Bernardo do Campo - São Paulo</p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p>brayan.bento1@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/brayan-bento/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/brayannmb" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.instagram.com/brayannmb/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                                    <li><a href="https://brayan-monserrah.medium.com/" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Massively</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
