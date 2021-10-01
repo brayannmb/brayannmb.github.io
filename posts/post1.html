@@ -61,9 +61,9 @@
                                 <li>Manipulação de strings</li>
                                 </ul>
                                 <h3>Bibliotecas Utilizadas:</h3></p>
-                                <div><img src="/images/post01/import.png" alt="" /></div> <br/>
+                                <div><img class="responsive_image" src="/images/post01/import.png" alt="" /></div> <br/>
 								<p>É possível que você não tenha alguma dessas bibliotecas instaladas no seu Colab. Para instalar qualquer biblioteca no Google Colaboratory basta utilizar o comando <b>pip install -q</b> , como mostra a foto a seguir: <br/>
-								<div><img src="/images/post01/lib_install.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/lib_install.png" alt="" /></div><br/>
 								Este parâmetro -qutilizado no final do comando serve para não mostrar as diversas informações de instalação quando é executada a célula.
 								</p>
 								<h3>LET´S GO!</h3>
@@ -72,12 +72,12 @@
 								A primeira parte deste projeto consiste em fazer a conexão do Google Colab ao Drive, assim, conseguiremos coletar os dados dos arquivos PDF que estão alocados na nuvem.	
 								</p>
 								<h3>Conexão Colab e Drive:</h3>
-								<div><img src="/images/post01/colab_drive.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/colab_drive.png" alt="" /></div><br/>
 								<p>Ao abrir o Google Colab, no canto superior esquerdo existem alguns campos, como estes na foto acima. Devemos clicar neste último ícone de pasta onde está sendo apontado.
 								Após clicar neste ícone, irá aparecer uma mensagem se desejamos disponibilizar o acesso do Drive da conta vinculada ao Google Colab, neste caso, clicamos em conectar ao Google Drive.<br/>
 								Feito isso, o nosso Drive já pode ser acessado. Se repararmos neste mesmo canto superior esquerdo, foi adicionado mais um diretório, chamado drive.<br/>
 								Neste repositório contém todos os arquivos alocados na nuvem, para visualizar quais pastas estão armazenadas devemos utilizar o código a seguir:<p/>
-								<div><img src="/images/post01/ls.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/ls.png" alt="" /></div><br/>
 							    <p>Diretamente do Linux, o comando !ls faz uma listagem das pastas contidas no diretório atual.</p>
 								<h3>Navegando pelos Diretórios</h3>
 								<p>Agora que já estamos conectados na nuvem, precisamos aprender como navegar entre os diretórios e acessar os arquivos desejados. Pensando nisso, utilizaremos a biblioteca OS.</p>
@@ -88,7 +88,7 @@
 								</ul>
 								<p>Existem mais funções, mas para este tutorial será utilizado estas três.<br/>
 								O primeiro passo após se conectar com o Drive é verificar qual o diretório estamos, para isso utilizaremos o método os.getcwd()<p/>
-								<div><img src="/images/post01/getcwd.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/getcwd.png" alt="" /></div><br/>
 								<p>Como padrão, o resultado será: ' /content'.<br/>
 								Este é o diretório padrão do Colab.
 								Bom, mas não é neste diretório onde queremos estar, precisamos acessar o diretório drive que aparece no canto superior esquerdo da nossa tela, como mostra na foto abaixo: <br/>
@@ -99,64 +99,64 @@
 								<div><img src="/images/post01/chdir.png" alt="" /></div><br/>
 								O método os.chdir() nos possibilita sair do diretório padrão e escolhermos o que desejamos. O caminho descrito dentro dos parênteses, é o caminho para o arquivo PDF que desejamos acessar. <br/>
 								Dica: para não errar a escrita do caminho, é possível acessar o arquivo apenas clicando nas pastas ao lado, assim, que encontrar o arquivo desejado com o botão direito do mouse podemos copiar o caminho, apenas clicando em "Copiar caminho", ou em inglês Copy path. A imagem a seguir demonstra essa explicação.<br/><br/>
-								<div><img src="/images/post01/path.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/path.png" alt="" /></div><br/>
 								Muitas vezes este acesso não estará tão fácil igual no exemplo acima, por muitas vezes utilizar um e-mail corporativo onde existe milhares de pastas, mas este processo somente será feito uma vez.	
 								</p>
 								<h3>Abrindo Arquivo PDF</h3>
 								<p>Agora que já estamos na pasta correta, onde contém todos os arquivos, precisamos abrir estes arquivos para então extrairmos algumas informações contidas neles. <br/>
-								<div><img src="/images/post01/open_files.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/open_files.png" alt="" /></div><br/>
 								Através do código acima, podemos de fato abrir o arquivo desejado. <br/>
 								A variável arquivos_semana contém o método os.listdir() que lista todas os arquivos no diretório atual. Não se preocupe com isso agora, esta variável nos será útil mais para frente. <br/>
 								A variável pdf contém o método pdfplumber.open que de fato abre o arquivo selecionado pelo caminho descrito em parênteses.</p>
 								<b>Atenção!</b>
 								<p>Este caminho é muito parecido com o outro utilizado um pouco acima para acessar o diretório, mas ambos são diferentes. Embora o começo seja igual, este contém o arquivo 20200801.pdf no final, pois aqui estamos acessando o arquivo e não somente o diretório.</p>
 								<h3>Quantidade de Páginas do Arquivo:</h3>
-								<div><img src="/images/post01/pages.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/pages.png" alt="" /></div><br/>
 								<p>Através do atributo .pages nós podemos acessar as páginas contidos no arquivo PDF.</p>
 								<h3>Selecionando a página desejada:</h3>
-								<div><img src="/images/post01/page.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/page.png" alt="" /></div><br/>
 								<p>Acredito que nem todas as páginas de relatórios são utilizadas, então podemos selecionar a página que contém a informação que queremos extrair. Para isso, utlizamos o código acima, onde a variável page está selecionando a primeira página, de index 0.<br/>
 								Vale lembrar que index em Python começa pela posição zero, no meu caso, estou acessando a página 1, mas seu index é 0.</p>
 								<h3>Extraindo o Texto do PDF:</h3>
 								<p>Agora que já estamos com o arquivo selecionado, precisamos extrair o seu conteúdo. O método extract_text() nos permite fazer exatamente isso. <br/>
-								<div><img src="/images/post01/text.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/text.png" alt="" /></div><br/>
 								No meu caso, o resultado do arquivo que eu acessei é esse:
 								</p>
-								<div><img src="/images/post01/result.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/result.png" alt="" /></div><br/>
 								<p>A primeira vista, não é possível entender o que está escrito, existem muitos caracteres especiais.. de fato, está uma bagunça! Mas agora que vem a parte boa, nós iremos manipular as strings contidas neste arquivo a fim de extrair suas informações.</p>
 								<h3>Arrumando a Bagunça</h3>
 								<p>Se pararmos para analisar o resultado do texto obtido, podemos enxergar muitos \t e \n . Ambos são funções que nos possibilitam uma melhor visualização quando utilizamos a função print. Mas no nosso caso, estas funções estão nos atrapalhando.<br/>
 								Pensando nisso, iremos utilizar os métodos nativos da linguagem Python para manipular estas strings.<br/>
 								O primeiro passo será utilizar o método .split() que faz uma separação nas strings de acordo com o parâmetro que escolhermos dentro dos parênteses.</p>
-								<div><img src="/images/post01/split.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/split.png" alt="" /></div><br/>
 								<p>Neste caso, no separador coloquei '\n' . Em todas as partes que contém este separador foram excluídas. Feito isso, este será o resultado:</p>
-								<div><img src="/images/post01/result01.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/result01.png" alt="" /></div><br/>
 								<p>A linha marcada por vermelho é onde está localizado o valor de receita que neste exemplo estou buscando. Para acessar este valor, podemos utilizar o seu index, que no meu caso está localizado na posição 7 com index 6.</p>
-								<div><img src="/images/post01/split02.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/split02.png" alt="" /></div><br/>
 								<p>Com isso, teremos este resultado:</p>
-								<div><img src="/images/post01/result02.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/result02.png" alt="" /></div><br/>
 								<p>Que grande avanço, não é mesmo? Pouco atrás a nossa visualização era uma imensa quantidade caracteres que não nos diziam nada. Bom, mas ainda temos trabalho pela frente. <br/>
 								Mesmo agora com poucas strings, precisamos fazer novas separações apenas o que estou buscando nesta string é o valor 1297.00 . Analisando a string, notei que uma ótima separação seria eliminar a string '\t' que aparece três vezes.</p>
-								<div><img src="/images/post01/split03.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/split03.png" alt="" /></div><br/>
 								<p>Novamente irei utilizando o método .split() , o resultado obtido foi este:
-								<div><img src="/images/post01/result03.png" alt="" /></div>
+								<div><img class="responsive_image" src="/images/post01/result03.png" alt="" /></div>
 								</p>
 								<p>Agora ficou fácil, né? Através do index, irei acessar a posição 3 de index 2.</p>
-								<div><img src="/images/post01/split04.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/split04.png" alt="" /></div><br/>
 								<p>O resultado do código acima:</p>
-								<div><img src="/images/post01/result04.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/result04.png" alt="" /></div><br/>
 								<p>Parece que chegamos ao resultado esperado, mas será isso é o suficiente? Será que com este resultado eu posso já posso fazer algumas operações?<br/>
 								A resposta é não! <br/>
 								Se notarmos, este valor está contido dentro de aspas simples. Em Python estas aspas nos mostram que este valor tem seu tipo primitivo como string. Isso é algo que devemos nos atentar ao trabalhar com strings.</p>
 								<h3>Transformando Strings:</h3>
 								<p>Antes de realmente trabalhar com número que desejamos, precisamos transformar seu tipo primitivo de string para float.</p>
-								<div><img src="/images/post01/text01.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/text01.png" alt="" /></div><br/>
 								<p>O resultado será um valor que podemos utilizar em operações aritméticas. <br/>
 								Se você tem dúvidas de como trabalhar com strings, aqui está uma <a href="https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6">Playlist</a> do Gustavo Guanabara onde ele ensina tudo sobre a linguagem Python desde o básico. (Obs: com a melhor didática deste mundo)</p>
 								<h3>Automatizando a Extração de Informações:</h3>
 								<p>Bom, foi ensinado como trabalhar com um arquivo e fazer as devidas manipulações para extrair suas informações, mas isso terá que ser feito todas as vezes que desejamos coletar estes dados? A resposta é não!<br/>
 								Neste tópico irei abordar como você pode utilizar os conceitos e métodos apresentados, com o pensamento de automatizar a rotina diária de coleta de dados a partir de arquivos PDF.</p>
-								<div><img src="/images/post01/code.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/code.png" alt="" /></div><br/>
 								<h3>Explicando o código:</h3>
 								<p><b>1ª linha:</b> temos a variável receita_soma . Essa variável é utilizada para receber o valor da soma das receitas durante a iteração do laço for . (Essa variável deve estar fora do laço de repetição)<br/>
 								<b>2ª linha: </b>Lembra que no começo deste tutorial declaramos a variável arquivos_semana onde ela recebeu o comando os.listdir() ?<br/>
@@ -166,7 +166,7 @@
 								<b>8ª linha: </b>Print do arquivo selecionado e do valor de receita contido nele.<br/>
 								<b>9ª linha: </b>Print do valor da receita total dos últimos dias.</p>
 								<h3>Resultado do Código:</h3>
-								<div><img src="/images/post01/result05.png" alt="" /></div><br/>
+								<div><img class="responsive_image" src="/images/post01/result05.png" alt="" /></div><br/>
 								<p>Como podemos ver no resultado acima, ele nos mostra o arquivo que foi aberto e qual o seu valor de receita, no final nos mostra uma soma de todas as receitas dos últimos dias.</p>
 								<h3>Thank you!</h3>
 								<p>Espero que você que acompanhou este tutorial tenha gostado, eu estou aberto para sugestões de melhorias e para as dúvidas que possam surgir. Este projeto está no meu GitHub e também foi postado no meu Linkedin, aproveita e vamos nos conectar nessas redes, muito obrigado!</p>
