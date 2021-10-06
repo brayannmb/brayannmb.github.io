@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Brayan Monserrah</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" href="/images/portfolio.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/index.html" class="logo">Bem-vindo(a)</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="/index.html">Portfólio</a></li>
+							<li><a href="/generic.html">Sobre mim</a></li>
+							<!--<li><a href="/elements.html">Contato</a></li>-->
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/brayan-bento/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/brayannmb" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.instagram.com/brayannmb/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="https://brayan-monserrah.medium.com/" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Outubro 06, 2021</span>
+									<h1>Extraindo Informações dos Dados no Power Query<br />
+									</h1>
+									<p>Aprenda como a aba de "exibição" do Power Query pode te ajudar entender mais sobre os dados.</p>
+								</header>
+                                <div class="image main"><img src="/images/post4/banner.jpeg" alt="" /></div><br/>
+                                <p>Quando estamos iniciando o nosso processo de ETL no Power BI na maioria das vezes teremos que fazer alguns tratamentos em nossa base de dados. Por meio do Power Query, é necessário fazer essa estruturação de dados para que futuramente o modelo de dados ganhe em performance e não tenha problemas com tipos de dados incorretos ou valores nulos. <br/>
+                                Durante o processo de estruturação dos dados, existem diversas perguntas que devemos nos fazer para que ajudem a a planejar quais passos iremos seguir, algumas delas são:</p>
+                                <ul>
+                                    <li>Existem valores nulos?</li>
+                                    <li>As colunas estão com os tipos de dados corretos?</li>
+                                    <li>Como está a distribuição de dados em cada coluna?</li>
+                                    <li>Existe alguma coluna que não é relevante para a nossa análise? Pode ser removida?</li>
+                                </ul>
+                                <p>No Power BI, existem diversas maneiras para solucionar estes problemas. Neste artigo eu gostaria de te mostrar uma ferramenta incrível do Power Query que te ajuda a ter um entendimento prévio em relação aos dados e que pode ser um meio para identificar possíveis erros.</p>
+                                <h3>Let´s go!</h3>
+                                <p>Neste exemplo, irei utilizar o "Hello, world!" dos projetos de Ciência de Dados que é a base de dados do naufrágio do Titanic que está disponível para ser baixada no site do Kaggle. <br/>
+                                Na aba exibição no Power Query, existe um campo chamado de visualização de dados:</p>
+                                <div><img class="responsive_image" src="/images/post4/aba_exibicao.png" alt=""/></div><br/>
+                                <p>Através dessa ferramenta podemos extrair características dos nossos dados apenas marcando as opções acima.</p>
+                                <h3>Qualidade da Coluna</h3>
+                                <p>Selecionando esta opção o resultado será o percentual de valores válidos, erros e valores nulos em cada uma das colunas, segue abaixo um exemplo:</p>
+                                <div><img class="responsive_image" src="/images/post4/qualidade_coluna.png" alt=""/></div><br/>
+                                <p>Se posicionarmos o mouse em cima da legenda, irá aparecer uma caixinha mostrando o percentual de cada um desses valores. Clicando no sinal de reticências (três pontinhos) existem diversas opções de tratamento para possíveis erros como remover vazio, remover duplicatas, substituir erros, entre outras opções.</p>
+                                <h3>Distribuição de Dados nas Colunas</h3>
+                                <p>Se selecionarmos o campo "Distribuição de colunas", este será o resultado:</p>
+                                <div><img class="responsive_image" src="/images/post4/distribuicao_dados.png" alt=""/></div><br/>
+                                <p>Na parte superior, embaixo do nome das colunas irá aparecer a distribuição dos dados de cada coluna. Se nós posicionarmos o mouse em cima de um dos gráficos, ele nos mostra a quantidade valores distintos e exclusivos pertencentes a coluna selecionada. <br/>
+                                Igual a opção Qualidade da Coluna, aqui também podemos posicionar o mouse em cima das visualizações e fazer tratamentos diretamente clicando no sinal de reticências. <br/>
+                                Dificilmente conseguiremos extrair muitos insights apenas com essa visualização, mas como o Power BI é uma ferramenta que gosta de ajudar nós analistas, ele disponibiliza a seguinte opção na aba de visualização dos dados:</p>
+                                <h3>Perfil da Coluna</h3>
+                                <p>Para quem já está familiarizado com a linguagem de programação Python para análise de dados, a library Pandas possui o método .describe muito semelhante com a ferramenta que eu irei apresentar. <br/>
+                                Selecionando essa opção, este será o resultado:</p>
+                                <div><img class="responsive_image" src="/images/post4/perfil_coluna.png" alt=""/></div><br/>
+                                <p>Através dessa opção podemos extrair valores como:</p>
+                                <ul>
+                                    <li>Contagem</li>
+                                    <li>Valores nulos</li>
+                                    <li>Distintos e exclusivos</li>
+                                    <li>Valor mínimo</li>
+                                    <li>Valor máximo</li>
+                                    <li>Desvio padrão</li>
+                                </ul>
+                                <p>Aquele gráfico da distribuição dos dados é ampliado mostrando os valores que possuem uma frequência maior e aqueles que possuem uma frequência menor. <br/>
+                                Como por exemplo, nessa base de dados é possível analisar que a grande maioria das pessoas eram adultos e existiam uma quantidade menor de velhos e crianças. <br/>
+                                Muito parecido com o .describe(), não é mesmo?! <br/>
+                                Por padrão essa distribuição é baseada nas 1000 primeiras linhas do conjunto de dados. Neste caso eu estou trabalhando com apenas 891 linhas, então a ferramenta consegue atender a todas as entradas. <br/> 
+                                Se o conjunto de dados que você estiver utilizando possuir um número maior de entradas, é possível mudar a quantidade linhas, basta clicar em uma opção chamada "Criação do perfil de coluna com base nas primeiras 1000 linhas" que pode ser encontrada no canto inferior esquerdo:</p>
+                                <div><img class="responsive_image" src="/images/post4/ajuste.png" alt=""/></div><br/>
+                                <p>E depois clicar em "Criação do perfil de coluna com base em todo o conjunto de dados":</p>
+                                <div><img class="responsive_image" src="/images/post4/ajuste1.png" alt=""/></div><br/>
+                                <p>Prontinho! Dessa maneira o Power Query irá se basear em todo o seu conjunto de dados! <br/>
+                                Espero que essa dica relacionada ao Power Query ajude em sua produtividade em análises de dados e possa ser utilizada para extrair muitas informações relevantes.
+                                </p>
+                                <h3>Thank you!</h3>
+                                <p>Por hoje é isso pessoal, gostaria de agradecer a você que acompanhou este artigo até o final. Vamos no conectar nas redes! Aqui está o meu
+                                <a href="https://www.linkedin.com/in/brayan-bento/">LinkedIn</a>
+                                e <a href="https://www.instagram.com/brayannmb/">Instagram</a>
+                                , onde eu compartilho meus aprendizados sobre o mundo dos dados e aqui está o meu <a href="https://github.com/brayannmb">GitHub</a> e meu 
+                                <a href="https://brayannmb.github.io/">blog pessoal/portfólio</a> de projetos.</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<!--<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section> -->
+						<section class="split contact">
+							<section class="alt">
+								<h3>Endereço</h3>
+								<p>São Bernardo do Campo - São Paulo</p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p>brayan.bento1@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/brayan-bento/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/brayannmb" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.instagram.com/brayannmb/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                                    <li><a href="https://brayan-monserrah.medium.com/" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Massively</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
