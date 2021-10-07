@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Brayan Monserrah</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" href="/images/portfolio.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="/index.html" class="logo">Bem-vindo(a)</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="/index.html">Portfólio</a></li>
+							<li><a href="/generic.html">Sobre mim</a></li>
+							<!--<li><a href="/elements.html">Contato</a></li>-->
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/brayan-bento/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/brayannmb" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.instagram.com/brayannmb/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="https://brayan-monserrah.medium.com/" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Fevereiro 25, 2021</span>
+									<h1>Análise dos Dados do Airbnb - Londres<br />
+									</h1>
+									<p>Conheça muito mais sobre a belíssima cidade inglesa com a Análise dos dados do Airbnb.</p>
+								</header>
+                                <div class="image main"><img src="/images/post5/banner.png" alt="" /></div><br/>
+                                <p>O Airbnb já é considerado como sendo a maior empresa hoteleira da atualidade. Ah, o detalhe é que ele não possui nenhum hotel!<br/>
+                                Conectando pessoas que querem viajar (e se hospedar) com anfitriões que querem alugar seus imóveis de maneira prática, o Airbnb fornece uma plataforma inovadora para tornar essa hospedagem alternativa.<br/>
+                                No final de 2018, a Startup fundada 10 anos atrás, já havia hospedado mais de 300 milhões de pessoas ao redor de todo o mundo, desafiando as redes hoteleiras tradicionais.<br/>
+                                Uma das iniciativas do Airbnb é disponibilizar dados do site, para algumas das principais cidades do mundo. Por meio do portal Inside Airbnb, é possível baixar uma grande quantidade de dados para desenvolver projetos e soluções de Data Science.<br/>
+                                Neste artigo, irei analisar os dados referentes à cidade de Londres, e ver quais insights podem ser extraídos a partir de dados brutos.</p>
+                                <h3>Londres</h3>
+                                <p>Localizada nas margens do Rio Tâmisa, a cidade de Londres é considerada a maior cidade do Reino Unido, destacando-se nas áreas de finanças, industriais, tecnológicas e com grande destaque no turismo, onde foi considerada a 3ª cidade mais visitada do mundo em 2019 (antes da Covid-19), segundo o site Melhores Destinos.<br/>
+                                Talvez você já tenha ouvido falar sobre a belíssima residência onde a Rainha Elizabeth vive, sim eu estou falando do Palácio de Buckingham, mas você sabia que é possível visita-lo durante algumas épocas do ano? Ou você sabia que entre os meses de Maio e Julho é possível assistir a troca da guarda real? Eu falo a vocês que sim, tudo isso é possível!<br/>
+                                Além dessas atrações não poderia deixar de mencionar o Big Ben, Tower Bridge, Oxford Street, Abádia de Westminster e os elegantes museus da cidade inglesa.<br/>
+                                Bom, já sabemos que Londres é um grande polo turístico do mundo, mas quais informações nós poderíamos adquirir realizando a análise dos Dados do Airbnb de Londres?<br/>
+                                Algumas informações que iremos extrair desta análise exploratória:
+                                </p>
+                                <ul>
+                                    <li>O tipo de propriedade mais alugada em Londres no Airbnb</li>
+                                    <li>A média de preços nos tipos de propriedades mais alugadas</li>
+                                    <li>Os bairros mais caros e mais baratos da cidade Inglesa no Airbnb</li>
+                                </ul>
+                                <p>Lhe convido a me acompanhar nesta análise.</p>
+                                <h3>Obtenção dos Dados</h3>
+                                <p>Através do site Inside Airbnb, foram obtidos todos os dados presentes usados neste projeto. Como outras empresas o Airbnb disponibiliza estes dados, para que possam ser feitas análises exploratórias, o site citado acima possuí cidades como Rio de Janeiro, Paris, Tokyo, entre outras.<br/>
+                                O arquivo csv utilizado nesta análise foi o arquivo: listings.csv (Summary information and metrics for listings in London (good for visualisations), sendo um pouco menos detalhado, bom para visualizações.</p>
+                                <h3>Análise dos Dados</h3>
+                                <p>Primeiramente, vamos entender com que estamos trabalhando, então a seguir temos um dicionário das variáveis onde podemos traduzir o que são cada variáveis, ou colunas do nosso dataset.<br/>
+                                Dicionário das variáveis:</p>
+                                <ul>
+                                    <li>id: número de id gerado para identificar o imóvel</li>
+                                    <li>name: nome da propriedade anunciada</li>
+                                    <li>host_id: id gerado para o proprietário do imóvel</li>
+                                    <li>host_name: nome do anfitrião do imóvel</li>
+                                    <li>neighbourhood_group: esta coluna não contém nenhum dado válido para análise</li>
+                                    <li>neighbourhood: bairro onde está localizado o imóvel</li>
+                                    <li>latitude: coordenada de latitude do imóvel</li>
+                                    <li>longitude: coordenada de longitude do imóvel</li>
+                                    <li>room_type: informa o tipo de propriedade</li>
+                                    <li>price: preço para alugar esta propriedade</li>
+                                    <li>minimum_nights: noites mínimas de permanência na propriedade</li>
+                                    <li>number_of_reviews: número de reviews que a propriedade possui</li>
+                                    <li>last_reviews: data do último review da propriedade</li>
+                                    <li>reviews_per_month: quantidade de reviews por mês</li>
+                                    <li>calculated_host_listings_count: quantidade de imóveis do mesmo anfitrião</li>
+                                    <li>availability_365: número de dias de disponibilidade dentro de 365 dias</li>
+                                </ul>
+                                <p>Para poder começar uma análise, precisamos antes, visualizar a cara do nosso dataset, utilizando o comando head() nos permite imprimir as 5 primeiras linhas.</p>
+                                <div class="responsive_image"><img src="/images/post5/head.png" alt="" /></div><br/>
+                                <p>Apenas com a primeira impressão do dataset, é possível enxergar uma predominância de valores ausentes (NaN) na coluna neighbourhood_group , mas não vamos nos precipitar, vamos analisar!</p>
+                                <h3>Quantos atributos (variáveis) e quantas entradas o nosso conjunto de dados possui? Quais os tipos das variáveis?</h3>
+                                <p>Para saber com o que estamos lidando, precisamos saber antes o seu tamanho, uma característica da linguagem de programação Python é facilitar a nossa vida, então vamos utilizar o comando info() para visualizar estas informações.</p>
+                                <div class="responsive_image"><img src="/images/post5/info.png" alt="" /></div><br/>
+                                <p>Respondendo as nossas perguntas, a quantidade entradas são 77.136, os atributos deste dataset são 16 e os tipos das variáveis presentes são float64, int64 e object.</p>
+                                <h3>E aliás, como saber quantos valores ausentes nós temos em nosso dataset? Qual a porcentagem de valores ausentes presentes? Onde vivem? O que comem?</h3>
+                                <p>Bom, o que comem ainda não eu tenho a resposta, mas sei que não podem viver em nossos datasets!<br/>
+                                Brincadeiras a parte, valores ausentes nos trazem problemas na hora da análise, então vamos ver quantos deles estão presentes neste dataset.</p>
+                                <div class="responsive_image"><img src="/images/post5/missing_values.png" alt="" /></div><br/>
+                                <p>Como já sabíamos, neighbourhood_group tem 100% dos valores ausentes, as variáveis reviews_per_month e last_review possuem quase 30% de seus valores ausentes.<br/>
+                                Agora que já encontramos valores ausentes, a caçada contínua, mas agora é por outro ser terrível, sim eu estou falando dos famosos outliers. Para encontra-los, primeiro precisamos ver a distribuição das nossas variáveis.</p>
+                                <h3>Qual o tipo de distribuição das variáveis?</h3>
+                                <p>Para isso, podemos plotar histogramas que nos permite uma visualização sobre a distribuição das variáveis numéricas no dataset. Mas, é válido lembrar que histogramas são bem parecidos com gráficos de barras, entretanto, os dois tem funções diferentes.</p>
+                                <div class="responsive_image"><img src="/images/post5/distribuicao.png" alt="" /></div><br/>
+                                <p>Analisando estes gráficos, podemos identificar possíveis outliers nas variáveis price , minimum_nights , number_of_reviewse calculated_host_listings_count . Como por exemplo a quantidade de noites mínimas na propriedade ser mais de 1000 ou o preço de um aluguel ser 15.000 libras. Sim, estes podem ser os terríveis outliers que eu mencionei, mas não vamos tirar conclusões precipitadas, vamos analisar mais um pouco do dataset.</p>
+                                <h3>Existem outliers presentes?</h3>
+                                <p>Podemos de duas maneiras rápidas descobrir se realmente existem outliers presentes no dataset, elas são:</p>
+                                <ul>
+                                    <li>Resumo estatístico utilizando o comando describe()</li>
+                                    <li>Criação de boxplots para variáveis específicas</li>
+                                </ul>
+                                <p>Vamos começar pelo comando describe() , selecionando apenas variáveis relevantes para a nossa análise:</p>
+                                <div class="responsive_image"><img src="/images/post5/describe.png" alt="" /></div><br/>
+                                <p>De acordo com o resumo estatístico acima, podemos confirmar algumas hipóteses:</p>
+                                <ul>
+                                    <li>A variável pricepossui 75% dos seus valores sendo de até 127 libras, mas seu valor máximo é de 18.175 libras. (isso me parece um outlier)</li>
+                                    <li>O valor mínimo na variável price sendo 0 libras, o que certamente não condiz com a realidade</li>
+                                    <li>A variável minimum_nightspossuí 75% dos valores sendo 3 noites, porém o valor máximo é de 1125 noites. (aproximadamente 3 anos e 1 mês)</li>
+                                    <li>Utilizando da mesma linha pensamento, é possível enxergar outliers nas colunas calculated_host_listings_counte number_of_reviews.</li>
+                                </ul>
+                                <p>Mas por favor, acalme-se, o sonho da viagem de final de ano para Londres não está perdido por um aluguel custar 18.175 libras, ou a permanência mínima de 1125 noites. Essas exceções que são os famosos outliers, valores muito acima da média. O sonho de conhecer a terra da Rainha Elizabeth II ainda está de pé!<br/>
+                                Agora, vamos plotar dois Boxplots.</p>
+                                <div class="responsive_image"><img src="/images/post5/boxplot1.png" alt="" /></div><br/>
+                                <div class="responsive_image"><img src="/images/post5/boxplot2.png" alt="" /></div><br/>
+                                <p>Nitidamente podemos visualizar outliers nos boxplots, confirmando as hipóteses feitas com o resumo estatístico do comando describe.</p>
+                                <h3>Limpeza de Dados!</h3>
+                                <p>Agora que já identificamos os outliers presentes em nosso dataset, está na hora da faxina, momento em que nos livramos destes outliers para sempre e assim extrair informações relevantes.</p>
+                                <h3>Método IQR</h3>
+                                <p>Para tratar os outliers vamos seguir os seguintes passos:</p>
+                                <ul>
+                                    <li>Definir o Q1 e Q3 para as variáveis que serão limpas.</li>
+                                    <li>Calcular o IQR para as variáveis.</li>
+                                    <li>Definir o limite superior e inferior para cortar os outliers.</li>
+                                    <li>Remover os outliers.</li>
+                                </ul>
+                                <p>Após a limpeza , está na hora de fazer as comparações para saber se realmente teve um ganho significativo na limpeza de dados.</p>
+                                <h3>Média de preços das propriedades em todo o dataset:</h3>
+                                <ul>
+                                    <li>Antes da limpeza de dados: 120 libras esterlinas (valor em reais: 904 reais)</li>
+                                    <li>Depois da limpeza de dados: 84 libras esterlinas (valor em reais: 630 reais)</li>
+                                </ul>
+                                <h3>Média de noites exigidas:</h3>
+                                <ul>
+                                    <li>Antes da limpeza de dados: 5 noites</li>
+                                    <li>Depois da limpeza de dados: 2 noites</li>
+                                </ul>
+                                <h3>Histogramas sem outliers:</h3>
+                                <div class="responsive_image"><img src="/images/post5/distribuicao2.png" alt="" /></div><br/>
+                                <p>Nas colunas price, minimum_nights, onde foram feitas as limpezas, é nítido ver a diferença em relação ao histogramas sem limpeza de dados, é possível enxergar de uma maneira mais clara distribuição dos dados no dataset.<br/>
+                                Vamos ao que realmente interessa!</p>
+                                <h3>Quais são os bairros que apresentam mais ofertas para alugar imóveis em Londres?</h3>
+                                <p>Os 5 bairros com mais imóveis para se alugar no Airbnb em Londres:</p>
+                                <ul>
+                                    <li>Westminster (6.315 ofertas)</li>
+                                    <li>Tower Hamlets (5.753 ofertas)</li>
+                                    <li>Hackney (4.880 ofertas)</li>
+                                    <li>Camden (4.082 ofertas)</li>
+                                    <li>Kensington and Chelsea (3.854 ofertas)</li>
+                                </ul>
+                                <p>O bairro de Westminster contém famosos pontos turísticos da cidade, naturalmente, é onde estão disponíveis as maiores quantias de ofertas.</p>
+                                <h3>Dentre esses bairros, qual o tipo de imóvel mais alugado no Airbnb em Londres?</h3>
+                                <div class="responsive_image"><img src="/images/post5/houses.png" alt="" /></div><br/>
+                                <p>Podemos ver que a preferência são pelas propriedades Entire home/apt (51%) e Private room (47%).</p>
+                                <h3>Qual a média de preços apenas para os tipos de imóveis mais alugados no Airbnb Londres?</h3>
+                                <p>Com comando loc conseguimos especificar quais variáveis queremos utilizar do nosso dataset através de comparações, feita estas comparações, através do comando mean() tiramos a média da variável price.</p>
+                                <div class="responsive_image"><img src="/images/post5/mean_prices.png" alt="" /></div><br/>
+                                <div class="responsive_image"><img src="/images/post5/mean_prices2.png" alt="" /></div><br/>
+                                <ul>
+                                    <li>Média de preços nas propriedades Entire home estão entre: 115.98 libras (869,85 reais)</li>
+                                    <li>Média de preços nas propriedades Private room estão entre: 49.67 libras (372, 52 reais)</li>
+                                </ul>
+                                <p>Analisando um pouco mais sobre estes bairros, uma ótima informação seria quais as localidades (bairros) mais caros de Londres, para poder economizar aquela graninha dos presentes na hora da viagem!</p>
+                                <h3>Quais são as localidades mais caras no Airbnb de Londres?</h3>
+                                <p>Utilizando o comando groupby() conseguimos fazer o agrupamento de todos os dados da coluna neighbourhood , para assim poder tirar a média com o comando mean()de todos os preços dos bairros (neighbourhood).<br/>
+                                A seguir veremos uma lista com os bairros mais caros de Londres, segundo o Airbnb.</p>
+                                <div class="responsive_image"><img src="/images/post5/expensive_houses.png" alt="" /></div><br/>
+                                <p>Bom, analisando a tabela com o resultado das propriedades mais caras podemos ver que o primeiro bairro listado é City of London, aqui vai um questionamento, será que este resultado está mesmo representando a realidade?<br/>
+                                Bom, a princípio pesquisei sobre quais os bairros mais caros de Londres, e em todas as minhas pesquisas encontrei o bairro Kensington and Chelsea.<br/>
+                                Para quem conhece Londres, sabe que o bairro Kensington & Chelsea é um dos metros quadrados mais caros da cidade inglesa, um dos bairros mais elegantes de Londres, que disponibiliza de seus grandes museus, e sofisticadas galerias de arte, onde também está localizado o Palácio de Kensington, uma das moradias do Príncipe William.</p>
+                                <h3>Mas então, por que o resultado dos bairros mais caros está posicionado City of London como o primeiro?</h3>
+                                <p>Como o cálculo que fazemos é sobre a média dos preços nos bairros, precisamos saber quantos valores de entrada estão sendo somados, e logo após, divididos. Após a limpeza de dados, City of London tem 343 entradas, logo após, temos o bairro de Kensington and Chelsea com 3.854 entradas.<br/>
+                                Comparando estes dois valores, a quantidade de entradas de City of London é aproximadamente 10x menor do que Kensington and Chelsea. Pelo bairro City of London ter poucos registros em comparação aos outros bairros, isso acaba elevando significativamente a média dos preços. Mas ainda sim, são 343 entradas, e não podemos desconsidera-las, então, de acordo com este conjunto de dados em específico, City of London contém a maior média de preços.<br/>
+                                Westminster e Kensington fazem jus aos preços elevados na cidade Londres, estes bairros contém os maiores pontos turísticos da cidade, tais como:</p>
+                                <ul>
+                                    <li>Palácio de Buckingham (Westminster)</li>
+                                    <li>Abbey Road (Westminster)</li>
+                                    <li>Big Ben (Westminster)</li>
+                                    <li>Palácio de Kensington (Kensington)</li>
+                                    <li>Museu do Design (Kensington)</li>
+                                    <li>Museu da Ciência (Kensington)</li>
+                                    <li>Museu de História Natural (Kensington)</li>
+                                </ul>
+                                <h3>Ta bom, já foi mencionado os bairros mais caros, e onde estão os mais baratos?</h3>
+                                <p>Seguindo a mesma linha de raciocínio, utilizando o comando groupyby() e o comando mean() foi calculada média novamente, mas dessa vez, vamos olhar para os bairros com os menores preços.</p>
+                                <div class="responsive_image"><img src="/images/post5/cheap_houses.png" alt="" /></div><br/>
+                                <h3>Vamos além!</h3>
+                                <p>Já sabemos os bairros mais caros, os mais baratos, média de preços, os tipos de propriedades mais alugadas…</p>
+                                <h3>Existe uma correlação entre as variáveis existentes?</h3>
+                                <p>Fazemos um correlação sobre duas variáveis para saber o quanto elas estão relacionadas positivamente, o mais perto de 1 (cor azul) quer dizer que as variáveis tem uma correlação positiva, enquanto que o mais perto de 0 (cor vermelha) as variáveis tem uma correlação negativa.</p>
+                                <div class="responsive_image"><img src="/images/post5/correlation.png" alt="" /></div><br/>
+                                <p>Para fazer está correlação em Python foi utilizado o comando corr() da biblioteca Pandas.</p>
+                                <h3>Tabela de correlação de uma maneira mais compreensível:</h3>
+                                <div class="responsive_image"><img src="/images/post5/heatmap.png" alt="" /></div><br/>
+                                <p>Agora sim, utilizando sns,heatmap() foi plotado um gráfico de correlação que facilita muito a visualização dos resultados apresentados da tabela, onde conseguimos ver correlações entre as variáveis number_of_reviews e reviews_per_month.</p>
+                                <h3>Brincando com coordenadas!</h3>
+                                <p>Como nosso dataset nos disponibiliza longitudes e latitudes das propriedades, podemos plotar um gráfico de calor para saber quais lugares mais acessados.</p>
+                                <div class="responsive_image"><img src="/images/post5/map.png" alt="" /></div><br/>
+                                <p>Por efeito de curiosidade, os pontos mais “quentes”, são aqueles onde estão localizados os principais pontos turísticos de Londres.</p>
+                                <h3>Conclusões</h3>
+                                <p>Quero concluir este artigo muito feliz por poder apresentar esta análise de dados relacionada a belíssima cidade de Londres, através de dados do Airbnb. Onde foi tratado assuntos como valores ausentes, outliers, limpeza de dados, cálculo da média de valores, etc.<br/>
+                                Com as informações trabalhadas neste artigo, foi possível conhecer um pouco melhor sobre Londres, características relevantes da cidade para pessoas que desejam conhece-la e pagar mais barato, saber a média de noites mínimas, quais são os tipos de propriedades mais alugadas e onde estão situadas as propriedades mais visitadas.<br/>
+                                Naturalmente foi possível descobrir que os imóveis mais alugados estão proximos de grandes atrações.<br/>
+                                <p>Por hoje é isso pessoal, gostaria de agradecer a você que acompanhou este artigo até o final. <br/>
+                                Vamos no conectar nas redes! Aqui está o meu
+                                <a href="https://www.linkedin.com/in/brayan-bento/">LinkedIn</a>
+                                e <a href="https://www.instagram.com/brayannmb/">Instagram</a>
+                                , onde eu compartilho meus aprendizados sobre o mundo dos dados e aqui está o meu <a href="https://github.com/brayannmb">GitHub</a> e meu 
+                                <a href="https://brayannmb.github.io/">blog pessoal/portfólio</a> de projetos.</p></p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<!--<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section> -->
+						<section class="split contact">
+							<section class="alt">
+								<h3>Endereço</h3>
+								<p>São Bernardo do Campo - São Paulo</p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p>brayan.bento1@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/brayan-bento/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/brayannmb" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.instagram.com/brayannmb/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                                    <li><a href="https://brayan-monserrah.medium.com/" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Massively</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
